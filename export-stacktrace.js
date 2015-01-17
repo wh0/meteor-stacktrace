@@ -2,7 +2,7 @@ StackTrace = {
   printStackTrace: printStackTrace,
   getCaller: function (skip) {
     skip = skip || 2;
-    var lines = printStackTrace();
+    var lines = printStackTrace({guess: false});
     var i = 0;
     for (; skip > 0 && i < lines.length; skip--) {
       var thisFile = (lines[i].match(/@(.*\/.+\.(coffee|js)).*$/))[1];
